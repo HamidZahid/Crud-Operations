@@ -70,21 +70,21 @@ app.get("/", (req, res) => {
 
 //delete
 
-app.delete('/api/products/:id', async (req,res)=>{
-    try {
-        const {id} = req.params;
-        const product  = await Product.findByIdAndDelete(id);
-        if (!product) {
-            return res.status(404).json({message: "Product Not Found"})
-        }
+// app.delete('/api/products/:id', async (req,res)=>{
+//     try {
+//         const {id} = req.params;
+//         const product  = await Product.findByIdAndDelete(id);
+//         if (!product) {
+//             return res.status(404).json({message: "Product Not Found"})
+//         }
        
-        res.status(200).json({message: "Producted Has been deleted"})
+//         res.status(200).json({message: "Producted Has been deleted"})
         
-    } catch (error) {
-        res.status(500).json({message: error.message})
+//     } catch (error) {
+//         res.status(500).json({message: error.message})
         
-    }
-});
+//     }
+// });
 
 mongoose
   .connect(
