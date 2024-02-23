@@ -52,21 +52,21 @@ app.get("/", (req, res) => {
 
 // update a product
 
-// app.put('/api/products/:id', async (req,res)=>{
-//     try {
-//         const {id} = req.params;
-//         const product  = await Product.findByIdAndUpdate(id , req.body);
-//         if (!product) {
-//             return res.status(404).json({message: "Product Not Found"})
-//         }
-//         const updatedProduct = await Product.findById(id);
-//         res.status(200).json(updatedProduct)
+app.put('/api/products/:id', async (req,res)=>{
+    try {
+        const {id} = req.params;
+        const product  = await Product.findByIdAndUpdate(id , req.body);
+        if (!product) {
+            return res.status(404).json({message: "Product Not Found"})
+        }
+        const updatedProduct = await Product.findById(id);
+        res.status(200).json(updatedProduct)
         
-//     } catch (error) {
-//         res.status(500).json({message: error.message})
+    } catch (error) {
+        res.status(500).json({message: error.message})
         
-//     }
-// });
+    }
+});
 
 //delete
 
